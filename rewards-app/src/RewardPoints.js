@@ -20,10 +20,6 @@ function RewardPoints() {
       });
   }, []);
 
-  useEffect(() => {
-    calculatePoints(transactions);
-  }, [transactions]);
-
   const calculatePoints = (transactions) => {
     const pointsPerMonth = {};
     let total = 0;
@@ -54,21 +50,21 @@ function RewardPoints() {
         <thead>
           <tr>
             <th>Month</th>
-            <th class="text-end">Rewards</th>
+            <th className="text-end">Rewards</th>
           </tr>
         </thead>
         <tbody>
           {Object.keys(points).map((month) => (
             <tr key={month}>
               <td>{month}</td>
-              <td class="text-end">{points[month]}</td>
+              <td className="text-end">{points[month]}</td>
             </tr>
           ))}
         </tbody>
         <tfoot>
           <tr>
-            <td class="fw-bold">Total</td>
-            <td class="fw-bold text-end">{totalPoints}</td>
+            <td className="fw-bold">Total</td>
+            <td className="fw-bold text-end">{totalPoints}</td>
           </tr>
         </tfoot>
       </table>
